@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persian Tech Academy - Professional Skills in Your Language</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f29;
+            --bg-tertiary: #232936;
+            --text-primary: #e4e6eb;
+            --text-secondary: #b0b8c1;
+            --accent: #4a9eff;
+            --accent-dim: #3d82cc;
+            --border: #2d3748;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 120px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-dim);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-box {
+            background-color: var(--bg-tertiary);
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 32px;
+        }
+
+        .problem-box h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .problem-box p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .solution-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background-color: var(--bg-tertiary);
+            padding: 28px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Audience Section */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .audience-card {
+            background-color: var(--bg-tertiary);
+            padding: 32px;
+            border-radius: 8px;
+        }
+
+        .audience-card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .audience-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Persian Tech Academy</div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#audience">Who Is This For</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Professional Skills<br>Taught in Persian</h1>
+                <p>Quality technical education for Persian speakers worldwide. Learn programming, design, cybersecurity, and more in your native language.</p>
+                <a href="#about" class="cta-button">Learn More</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Persian-Language Education Matters</h2>
+                    <p>Breaking down the language barrier in technical learning</p>
+                </div>
+                <div class="about-content">
+                    <div class="problem-box">
+                        <h3>The Challenge</h3>
+                        <p>Most quality technical education is only available in English, creating a significant barrier for millions of Persian speakers who want to develop professional skills. Language shouldn't determine who gets access to career-changing knowledge.</p>
+                    </div>
+                    <p class="solution-text">
+                        We provide comprehensive courses in programming, design, cybersecurity, and business software—all taught in clear, professional Persian. Our approach focuses on practical skills that translate directly to career opportunities, explained in a way that makes complex topics accessible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What You Can Learn</h2>
+                    <p>Professional-grade courses across digital and technical disciplines</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Programming</h3>
+                        <p>Python, JavaScript, and fundamental programming concepts taught from the ground up.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Web Development</h3>
+                        <p>Build modern websites and applications with HTML, CSS, and JavaScript frameworks.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Machine learning fundamentals, data science, and AI application development.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Network & Cybersecurity</h3>
+                        <p>Network administration, security protocols, and ethical hacking fundamentals.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Game Development</h3>
+                        <p>Create interactive experiences with Unity and game design principles.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Adobe Creative Suite</h3>
+                        <p>Professional design and video editing with Photoshop, Illustrator, and Premiere.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>ICDL Certification</h3>
+                        <p>Computer literacy and office software skills recognized internationally.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Revit</h3>
+                        <p>Building Information Modeling for architecture and construction professionals.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Accounting Software</h3>
+                        <p>Business financial management tools and accounting system operations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audience Section -->
+        <section id="audience">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Who This Is For</h2>
+                    <p>Whether you're starting out or changing direction, quality education should be accessible</p>
+                </div>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h3>Students</h3>
+                        <p>Build a strong foundation in technical skills while learning in your native language. Start your career path with confidence and clarity.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Immigrants</h3>
+                        <p>Develop marketable skills that work anywhere in the world. Learn at your own pace while adjusting to a new environment.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h3>Career Switchers</h3>
+                        <p>Transition into tech and digital fields without the language barrier. Professional instruction that respects your experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p><strong>Persian Tech Academy</strong></p>
+                    <p>Professional education in Persian</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#audience">Audience</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
